@@ -1,0 +1,43 @@
+<!-- <pre>
+  {{ responseApi$ | async | json }}
+</pre> -->
+
+<footer class="footer p-10 bg-neutral text-neutral-content justify-center p-auto flex flex-wrap gap-12">
+  <div class="w-64">
+    <h6 class="footer-title">Socials</h6> 
+    <nav class="flex gap-4">
+      <a href="https://github.com/thenefelin" target="_blank">
+        <img class="w-12" src="./assets/img/socials/github.svg" alt="GitHub">
+      </a>
+      <a href="https://www.twitch.tv/thenefelin" target="_blank">
+        <img class="w-12" src="./assets/img/socials/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a href="https://www.youtube.com/c/TheNefelin" target="_blank">
+        <img class="w-12" src="./assets/img/socials/twitch.svg" alt="Twitch">
+      </a>
+      <a href="https://www.linkedin.com/in/nefelin" target="_blank">
+        <img class="w-12" src="./assets/img/socials/youtube.svg" alt="Youtube">
+      </a>
+    </nav>
+  </div>
+
+  @if (responseApi$ | async; as respApi) {
+    @if (respApi.data != null) {
+      @for (enlaceGrp of respApi.data; track enlaceGrp.id){
+        <nav class="w-32">
+          <h6 class="footer-title">{{enlaceGrp.nombre}}</h6> 
+          @for (enlace of enlaceGrp.enlaces; track $index) {
+            <a class="link link-hover" target="_blank" href={{enlace.enlaceUrl}} >{{enlace.nombre}}</a>
+          }
+        </nav>
+      }
+    }
+  }
+
+</footer>
+
+<footer class="footer p-4 bg-neutral text-neutral-content">
+  <aside class="m-auto">
+    <p>Copyright © 2024 - FranciscoDev</p>
+  </aside> 
+</footer>
