@@ -1,9 +1,15 @@
 # Portafolio Angular ssr v3.0
 
+### PowerShell issue windows
+```
+// open PowerShell as admin
+Set-ExecutionPolicy RemoteSigned
+yes
+```
+
 ### Install angular framework 
 ```
 npm install -g @angular/cli
-
 ng serve --open
 ```
 

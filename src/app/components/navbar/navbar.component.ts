@@ -12,10 +12,14 @@ export class NavbarComponent {
   changeTheme() {
     const html = document.querySelector("html")
 
-    if (html?.getAttribute("data-theme") === "winter")
-      html?.setAttribute("data-theme", "night"); 
-    else
-      html?.setAttribute("data-theme", "winter"); 
+    if (html?.getAttribute("data-theme") === "night") {
+      html?.setAttribute("data-theme", "winter");
+      console.log("winter");
+    }      
+    else {
+      html?.setAttribute("data-theme", "night");  
+      console.log("night");
+    }
   }
 
 }
