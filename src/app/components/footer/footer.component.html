@@ -9,28 +9,26 @@
       <a href="https://github.com/thenefelin" target="_blank">
         <img class="w-12" src="./assets/img/socials/github.svg" alt="GitHub">
       </a>
-      <a href="https://www.twitch.tv/thenefelin" target="_blank">
+      <a href="https://www.linkedin.com/in/nefelin" target="_blank">
         <img class="w-12" src="./assets/img/socials/linkedin.svg" alt="LinkedIn">
       </a>
-      <a href="https://www.youtube.com/c/TheNefelin" target="_blank">
+      <a href="https://www.twitch.tv/TheNefelin" target="_blank">
         <img class="w-12" src="./assets/img/socials/twitch.svg" alt="Twitch">
       </a>
-      <a href="https://www.linkedin.com/in/nefelin" target="_blank">
+      <a href="https://www.youtube.com/c/TheNefelin" target="_blank">
         <img class="w-12" src="./assets/img/socials/youtube.svg" alt="Youtube">
       </a>
     </nav>
   </div>
 
   @if (responseApi$ | async; as respApi) {
-    @if (respApi.data != null) {
-      @for (enlaceGrp of respApi.data; track enlaceGrp.id){
-        <nav class="w-32">
-          <h6 class="footer-title">{{enlaceGrp.nombre}}</h6> 
-          @for (enlace of enlaceGrp.enlaces; track $index) {
-            <a class="link link-hover" target="_blank" href={{enlace.enlaceUrl}} >{{enlace.nombre}}</a>
-          }
-        </nav>
-      }
+    @for (enlaceGrp of respApi; track enlaceGrp.Id){
+      <nav class="w-32">
+        <h6 class="footer-title">{{enlaceGrp.Nombre}}</h6> 
+        @for (enlace of enlaceGrp.Urls; track $index) {
+          <a class="link link-hover" target="_blank" href={{enlace.EnlaceUrl}} >{{enlace.Nombre}}</a>
+        }
+      </nav>
     }
   }
 

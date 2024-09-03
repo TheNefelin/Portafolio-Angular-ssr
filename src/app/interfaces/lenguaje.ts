@@ -1,5 +1,5 @@
 export interface Lenguaje {
-  id: number,
-  nombre: string,
-  imgUrl: string,
+  Id: number,
+  Nombre: string,
+  ImgUrl: string,
 }

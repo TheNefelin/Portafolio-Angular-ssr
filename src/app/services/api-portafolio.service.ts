@@ -6,6 +6,7 @@ import { EnlaceGrp } from '../interfaces/enlace-grp';
 import { Proyecto } from '../interfaces/proyecto';
 import { Youtube } from '../interfaces/youtube';
 import { environment } from '../../environments/environment';
+import { error } from 'node:console';
 
 @Injectable({
   providedIn: 'root'
@@ -16,15 +17,15 @@ export class ApiPortafolioService {
   
   constructor() { }
 
-  getProyecto(): Observable<ResponseApi<Proyecto[]>> {
-    return this._http.get<ResponseApi<Proyecto[]>>(`${this._apiUrl}/Proyecto`);
+  getProyecto(): Observable<Proyecto[]> {
+    return this._http.get<Proyecto[]>(`${this._apiUrl}/projects`); 
   }
 
-  getYoutubes(): Observable<ResponseApi<Youtube[]>> {
-    return this._http.get<ResponseApi<Youtube[]>>(`${this._apiUrl}/Youtube`);
+  getYoutubes(): Observable<Youtube[]> {
+    return this._http.get<Youtube[]>(`${this._apiUrl}/youtubes`);
   }
   
-  getEnlaces(): Observable<ResponseApi<EnlaceGrp[]>> {
-    return this._http.get<ResponseApi<EnlaceGrp[]>>(`${this._apiUrl}/Enlace`);
+  getEnlaces(): Observable<EnlaceGrp[]> {
+    return this._http.get<EnlaceGrp[]>(`${this._apiUrl}/enlaces`);
   }
 }

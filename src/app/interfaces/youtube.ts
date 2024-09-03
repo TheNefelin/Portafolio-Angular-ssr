@@ -1,5 +1,5 @@
 export interface Youtube {
-  id: number,
-  nombre: string,
-  embed: string,
+  Id: number,
+  Nombre: string,
+  Embed: string,
 }

@@ -1,7 +1,7 @@
 export interface Enlace {
-  id: number,
-  nombre: string,
-  enlaceUrl: string,
-  estado: number,
-  id_EnlaceGrp: number,
+  Iid: number,
+  Nombre: string,
+  EnlaceUrl: string,
+  Estado: number,
+  Id_EnlaceGrp: number,
 }

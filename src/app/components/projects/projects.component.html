@@ -8,41 +8,39 @@
   <div class="flex flex-wrap gap-4 justify-center m-auto max-w-screen-xl">
 
     @if (responseApi$ | async; as respApi) {
-      @if (respApi.data != null) {
-        @for (proyecto of respApi.data; track $index) {
-          <div class="card w-72 bg-base-100 shadow-xl">
-            <div class="card-body">
-              <h2 class="card-normal font-bold">{{proyecto.nombre}}</h2>
-            </div>
-
-            <figure class="px-4">
-              <img class="rounded-xl" src="./assets/img/cover/{{proyecto.imgUrl}}" alt={{proyecto.nombre}} />
-            </figure>
-
-            <div class="card-body m-auto">
-              <h2 class="card-title">          
-                @for (lenguaje of proyecto.lenguajes; track $index) {
-                  <div class="avatar m-auto">
-                    <div class="h-10">
-                      <img src="./assets/img/languages/{{lenguaje.imgUrl}}" alt={{lenguaje.nombre}} />
-                    </div>
-                  </div>
-                }
-              </h2>
-              
-              <h2 class="card-title m-auto">
-                @for (tecnologia of proyecto.tecnologias; track $index) {
-                  <div class="avatar m-auto">
-                    <div class="h-10">
-                      <img src="./assets/img/technologies/{{tecnologia.imgUrl}}" alt={{tecnologia.nombre}} />
-                    </div>
-                  </div>
-                }
-              </h2>
-            </div>
-
+      @for (proyecto of respApi; track $index) {
+        <div class="card w-72 bg-base-100 shadow-xl">
+          <div class="card-body">
+            <h2 class="card-normal font-bold">{{proyecto.Nombre}}</h2>
           </div>
-        }
+
+          <figure class="px-4">
+            <img class="rounded-xl" src="./assets/img/cover/{{proyecto.ImgUrl}}" alt={{proyecto.Nombre}} />
+          </figure>
+
+          <div class="card-body m-auto">
+            <h2 class="card-title">          
+              @for (lenguaje of proyecto.Languages; track $index) {
+                <div class="avatar m-auto">
+                  <div class="h-10">
+                    <img src="./assets/img/languages/{{lenguaje.ImgUrl}}" alt={{lenguaje.Nombre}} />
+                  </div>
+                </div>
+              }
+            </h2>
+            
+            <h2 class="card-title m-auto">
+              @for (tecnologia of proyecto.Technologies; track $index) {
+                <div class="avatar m-auto">
+                  <div class="h-10">
+                    <img src="./assets/img/technologies/{{tecnologia.ImgUrl}}" alt={{tecnologia.Nombre}} />
+                  </div>
+                </div>
+              }
+            </h2>
+          </div>
+
+        </div>
       }
     }
 

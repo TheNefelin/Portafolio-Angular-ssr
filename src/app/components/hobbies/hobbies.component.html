@@ -8,16 +8,12 @@
   <div class="flex flex-wrap gap-4 justify-center max-w-screen-xl m-auto">
 
     @if (responseApi$ | async; as respApi) {
-      @if (respApi.data != null) {
-        @for (youtube of respApi.data; track $index) {
-
-          <div class="card w-96 bg-base-100 shadow-xl">
-            <figure>
-              <iframe class="w-full aspect-video rounded-xl" [src]="sanitize(youtube.embed)"></iframe>
-            </figure>
-          </div>
-
-        }
+      @for (youtube of respApi; track $index) {
+        <div class="card w-96 bg-base-100 shadow-xl">
+          <figure>
+            <iframe class="w-full aspect-video rounded-xl" [src]="sanitize(youtube.Embed)"></iframe>
+          </figure>
+        </div>
       }
     }
 
