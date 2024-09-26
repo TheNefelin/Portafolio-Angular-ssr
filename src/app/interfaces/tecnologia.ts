@@ -1,5 +1,5 @@
 export interface Tecnologia {
-  Id: number,
-  Nombre: string,
-  ImgUrl: string,
+  id: number,
+  name: string,
+  imgUrl: string,
 }

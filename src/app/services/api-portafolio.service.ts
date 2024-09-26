@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { ResponseApi } from '../interfaces/response-api';
 import { EnlaceGrp } from '../interfaces/enlace-grp';
 import { Proyecto } from '../interfaces/proyecto';
@@ -18,14 +18,20 @@ export class ApiPortafolioService {
   constructor() { }
 
   getProyecto(): Observable<Proyecto[]> {
-    return this._http.get<Proyecto[]>(`${this._apiUrl}/projects`); 
+    return this._http.get<ResponseApi<Proyecto[]>>(`${this._apiUrl}/projects`).pipe(
+      map((resp: ResponseApi<Proyecto[]>) => resp.data)
+    ); 
   }
 
   getYoutubes(): Observable<Youtube[]> {
-    return this._http.get<Youtube[]>(`${this._apiUrl}/youtubes`);
+    return this._http.get<ResponseApi<Youtube[]>>(`${this._apiUrl}/youtube`).pipe(
+      map((res: ResponseApi<Youtube[]>) => res.data)
+    );
   }
   
   getEnlaces(): Observable<EnlaceGrp[]> {
-    return this._http.get<EnlaceGrp[]>(`${this._apiUrl}/enlaces`);
+    return this._http.get<ResponseApi<EnlaceGrp[]>>(`${this._apiUrl}/urls`).pipe(
+      map((res: ResponseApi<EnlaceGrp[]>) => res.data)
+    );
   }
 }

@@ -49,7 +49,7 @@ module.exports = {
   ],
 }
 ```
-### Some Commands
+### Some Commands schematics CLI
 ```
 ng g c components/navbar
 ng g s services/data

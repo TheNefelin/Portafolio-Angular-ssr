@@ -1,8 +1,7 @@
 import { Enlace } from "./enlace";
 
 export interface EnlaceGrp {
-  Id: number,
-  Nombre: string,
-  Estado: number,
-  Urls: Enlace[],
+  id: number,
+  name: string,
+  urls: Enlace[],
 }

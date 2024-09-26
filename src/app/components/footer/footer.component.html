@@ -22,11 +22,11 @@
   </div>
 
   @if (responseApi$ | async; as respApi) {
-    @for (enlaceGrp of respApi; track enlaceGrp.Id){
+    @for (enlaceGrp of respApi; track enlaceGrp.id){
       <nav class="w-32">
-        <h6 class="footer-title">{{enlaceGrp.Nombre}}</h6> 
-        @for (enlace of enlaceGrp.Urls; track $index) {
-          <a class="link link-hover" target="_blank" href={{enlace.EnlaceUrl}} >{{enlace.Nombre}}</a>
+        <h6 class="footer-title">{{enlaceGrp.name}}</h6> 
+        @for (enlace of enlaceGrp.urls; track $index) {
+          <a class="link link-hover" target="_blank" href={{enlace.url}} >{{enlace.name}}</a>
         }
       </nav>
     }
